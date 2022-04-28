@@ -3,11 +3,24 @@ package com.erald.digitalelectrician.ui.home
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.erald.digitalelectrician.model.HomeModel
+import com.erald.digitalelectrician.repository.HomeRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class HomeViewModel : ViewModel() {
+@HiltViewModel
+class HomeViewModel @Inject constructor(private val repository: HomeRepository) : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+
+    private val homeItemsEmitter = MutableLiveData<ArrayList<HomeModel>>()
+    var homeItems : LiveData<ArrayList<HomeModel>> = homeItemsEmitter
+
+    init {
+        loadHomeItems()
     }
-    val text: LiveData<String> = _text
+
+    private fun loadHomeItems() {
+        homeItemsEmitter.value = repository.getHomeItems()
+    }
+
 }

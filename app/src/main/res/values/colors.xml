@@ -4,4 +4,19 @@
     <color name="colorPrimaryDark">#1d1f1e</color>
 
     <color name="colorTextPrimary">#b78357</color>
+
+    <color name="colorWhite">#FFFFFF</color>
+
+    <color name="colorDodgerBlue">#1E90FF</color>
+    <color name="colorColumbiaBlue">#87AFC7</color>
+    <color name="colorTiffanyBlue">#81D8D0</color>
+    <color name="colorHeavenlyBlue">#C6DEFF</color>
+    <color name="colorBlueGreen">#7BCCB5</color>
+    <color name="colorAquamarine">#7FFFD4</color>
+    <color name="colorTurquoise">#40E0D0</color>
+    <color name="colorDarkCyan">#008B8B</color>
+    <color name="colorDarkMint">#31906E</color>
+    <color name="colorFallForestGreen">#4E9258</color>
+    <color name="colorNeonYellow">#FFFF33</color>
+    <color name="colorBakersBrown">#5C3317</color>
 </resources>
