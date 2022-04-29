@@ -24,4 +24,15 @@
     <string name="motor">Motor</string>
     <string name="cable">Cable</string>
     <string name="converter">Converter</string>
+
+    <!-- Basic Items -->
+    <string name="ohm_law_dc">Ohm\'s law for DC</string>
+    <string name="ohm_law_ac">>Ohm\'s law for AC</string>
+    <string name="lc_resonance">LC Resonance</string>
+    <string name="y_delta_transform">Y-Δ Transformation</string>
+    <string name="electrical_energy">Electrical Energy</string>
+    <string name="current_density">Current Density</string>
+    <string name="ideal_transformer">Ideal Transformer</string>
+    <string name="ac_circuits">AC Circuits</string>
+    <string name="contact_protection">Contact Protection. RC Snubbers</string>
 </resources>
