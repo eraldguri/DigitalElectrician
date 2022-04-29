@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
@@ -46,11 +47,18 @@ class HomeFragment : Fragment() {
 
     private fun observeHomeItems() {
         viewModel.homeItems.observe(viewLifecycleOwner) {
-            val homeAdapter = HomeAdapter(_context, it)
+            val homeAdapter = HomeAdapter(_context, it, onHomeClickListener)
             val recyclerView: RecyclerView = binding.homeRecyclerView
             recyclerView.layoutManager = GridLayoutManager(_context, 3)
             recyclerView.adapter = homeAdapter
         }
+    }
+
+    private val onHomeClickListener = object: HomeAdapter.OnHomeClickListener {
+        override fun onClick(position: Int) {
+            Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show()
+        }
+
     }
 
     override fun onDestroyView() {

@@ -1,6 +1,6 @@
 package com.erald.digitalelectrician.model
 
 data class HomeModel(
-    val title: String,
+    val title: Int,
     val color: Int
 )

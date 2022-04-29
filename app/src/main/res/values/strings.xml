@@ -10,4 +10,18 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+
+    <!-- Home Items -->
+    <string name="basic">Basic</string>
+    <string name="capacitance">Capacitance</string>
+    <string name="resistance">Resistance</string>
+    <string name="inductance">Inductance</string>
+    <string name="pue">PUE</string>
+    <string name="nec">NEC</string>
+    <string name="cec">CEC</string>
+    <string name="iec">IEC</string>
+    <string name="conductor">Conductor</string>
+    <string name="motor">Motor</string>
+    <string name="cable">Cable</string>
+    <string name="converter">Converter</string>
 </resources>
