@@ -34,5 +34,17 @@
         <argument
             android:name="title"
             app:argType="string" />
+        <action
+            android:id="@+id/action_basicFragment_to_ohmLawDCFragment"
+            app:destination="@id/ohmLawDCFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ohmLawDCFragment"
+        android:name="com.erald.digitalelectrician.ui.home.basic.ohmLawDC.OhmLawDCFragment"
+        android:label="ohm_law_d_c_fragment"
+        tools:layout="@layout/ohm_law_d_c_fragment" >
+        <argument
+            android:name="title"
+            app:argType="string" />
     </fragment>
 </navigation>

@@ -8,18 +8,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.erald.digitalelectrician.MainActivity
 import com.erald.digitalelectrician.adapter.BasicAdapter
 import com.erald.digitalelectrician.databinding.BasicFragmentBinding
+import com.erald.digitalelectrician.model.BasicModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class BasicFragment : Fragment() {
 
-   private var _binding: BasicFragmentBinding? = null
+    private var _binding: BasicFragmentBinding? = null
     private lateinit var _context: Context
 
     private val viewModel: BasicViewModel by viewModels()
@@ -57,8 +59,14 @@ class BasicFragment : Fragment() {
     }
 
     private var onBasicClickListener = object : BasicAdapter.OnBasicClickListener {
-        override fun onClick(position: Int) {
-
+        override fun onClick(position: Int, items: MutableList<BasicModel>) {
+            when (position) {
+                0 -> {
+                    val navigateToOhmDCFragment =
+                        BasicFragmentDirections.actionBasicFragmentToOhmLawDCFragment(context!!.resources.getString(items[0].title))
+                    findNavController().navigate(navigateToOhmDCFragment)
+                }
+            }
         }
     }
 

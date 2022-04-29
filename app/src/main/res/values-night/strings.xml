@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="i_v_r">I = V/R</string>
+    <string name="i_p_v">I = P / V</string>
+    <string name="i_p_r">I = √(P/R)</string>
+    <string name="v_i_r">V = I * R</string>
+    <string name="v_p_i">V = P/I</string>
+    <string name="v_p_r">V = √(P*R)</string>
+    <string name="p_i_v">P = I*V</string>
+    <string name="p_i_u00b2_r">P = I² * R</string>
+    <string name="p_v_u00b2_r">P = V² / R</string>
+    <string name="r_v_i">R = V/I</string>
+    <string name="r_p_i_u00b2">R = P / I²</string>
+    <string name="r_v_u00b2_p">R = V² / P</string>
+    <string name="reset">Reset</string>
+    <string name="report">Report</string>
+
+    <string name="current">Current</string>
+    <string name="voltage">Voltage</string>
+    <string name="power">Power</string>
+</resources>

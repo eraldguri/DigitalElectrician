@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="voltageUnits">
+        <item>pV</item>
+        <item>nV</item>
+        <item>μV</item>
+        <item>mV</item>
+        <item>V</item>
+        <item>kV</item>
+        <item>MV</item>
+        <item>GV</item>
+    </string-array>
+    <string-array name="resistanceUnits">
+        <item>pΩ</item>
+        <item>nΩ</item>
+        <item>μΩ</item>
+        <item>mΩ</item>
+        <item>Ω</item>
+        <item>kΩ</item>
+        <item>MΩ</item>
+        <item>GΩ</item>
+    </string-array>
+    <string-array name="currentUnits">
+        <item>pA</item>
+        <item>nA</item>
+        <item>μA</item>
+        <item>mA</item>
+        <item>A</item>
+        <item>kA</item>
+        <item>MA</item>
+        <item>GA</item>
+    </string-array>
+    <string-array name="powerUnits">
+        <item>pW</item>
+        <item>nW</item>
+        <item>μW</item>
+        <item>mW</item>
+        <item>W</item>
+        <item>kW</item>
+        <item>MW</item>
+        <item>GW</item>
+    </string-array>
+</resources>

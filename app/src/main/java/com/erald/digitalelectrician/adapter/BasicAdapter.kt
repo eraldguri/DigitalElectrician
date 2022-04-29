@@ -37,7 +37,7 @@ class BasicAdapter(private val context: Context,
         }
 
         override fun onClick(p0: View?) {
-            onHomeClickListener.onClick(adapterPosition)
+            onHomeClickListener.onClick(adapterPosition, items)
         }
 
     }
@@ -60,7 +60,7 @@ class BasicAdapter(private val context: Context,
      * Interface for invoking the click event for each element of itemView
      * */
     interface OnBasicClickListener {
-        fun onClick(position: Int)
+        fun onClick(position: Int, items: MutableList<BasicModel>)
     }
 
 }
