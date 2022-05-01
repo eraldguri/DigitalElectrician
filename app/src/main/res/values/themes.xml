@@ -22,4 +22,17 @@
     <style name="Theme.DigitalElectrician.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.DigitalElectrician.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="DETextView" parent="Widget.AppCompat.TextView" >
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textColor">@color/blackTextColor</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="DETextViewBlue" parent="Widget.AppCompat.TextView" >
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>

@@ -11,64 +11,38 @@
         android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout"
+            android:id="@+id/constraintLayout2"
             android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:background="@color/colorAquamarine"
+            android:layout_height="wrap_content"
+            android:background="#F4F9F9"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/textViewOhmLawDCHeader"
+                android:id="@+id/textView2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:text="TextView"
-                android:textColor="@color/colorDarkMint"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textViewOhmLawDCValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="TextView"
-                android:textColor="@color/colorDarkMint"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@color/colorDarkMint"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
-
-            <TextView
-                android:id="@+id/textViewOhmLawDCFirstItem"
-                android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:text="TextView"
-                android:textColor="@color/colorWhite"
+                android:text="Current (I = V / R)"
+                style="@style/DETextView"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <TextView
+                android:id="@+id/textViewOhmLawDCVoltage"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/voltage"
+                style="@style/DETextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
             <EditText
-                android:id="@+id/editTextOhmLawDCFirstItem"
+                android:id="@+id/editTextOhmLawDCVoltage"
                 android:layout_width="130dp"
                 android:layout_height="35dp"
                 android:layout_marginStart="40dp"
@@ -77,34 +51,31 @@
                 android:inputType="numberDecimal"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp"
-                app:layout_constraintBottom_toBottomOf="@+id/textViewOhmLawDCFirstItem"
-                app:layout_constraintStart_toEndOf="@+id/textViewOhmLawDCFirstItem"
-                app:layout_constraintTop_toTopOf="@+id/textViewOhmLawDCFirstItem" />
+                app:layout_constraintBottom_toBottomOf="@+id/textViewOhmLawDCVoltage"
+                app:layout_constraintStart_toEndOf="@+id/textViewOhmLawDCVoltage"
+                app:layout_constraintTop_toTopOf="@+id/textViewOhmLawDCVoltage" />
 
             <Spinner
-                android:id="@+id/spinnerTextOhmLawDCFirstUnit"
+                android:id="@+id/spinnerTextOhmLawDCVoltage"
                 android:layout_width="100dp"
                 android:layout_height="35dp"
                 android:layout_marginEnd="16dp"
-                android:background="@drawable/round_layout"
-                app:layout_constraintBottom_toBottomOf="@+id/editTextOhmLawDCFirstItem"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextOhmLawDCVoltage"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/editTextOhmLawDCFirstItem" />
+                app:layout_constraintTop_toTopOf="@+id/editTextOhmLawDCVoltage" />
 
             <TextView
-                android:id="@+id/textViewOhmLawDCSecondItem"
+                android:id="@+id/textViewOhmLawDCResistance"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:layout_marginBottom="16dp"
-                android:text="TextView"
-                android:textColor="@color/colorWhite"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/textViewOhmLawDCFirstItem"
-                app:layout_constraintTop_toBottomOf="@+id/textViewOhmLawDCFirstItem" />
+                android:text="@string/resistance"
+                style="@style/DETextView"
+                app:layout_constraintStart_toStartOf="@+id/textViewOhmLawDCVoltage"
+                app:layout_constraintTop_toBottomOf="@+id/textViewOhmLawDCVoltage" />
 
             <EditText
-                android:id="@+id/editTextOhmLawDCSecondItem"
+                android:id="@+id/editTextOhmLawDCResistance"
                 android:layout_width="130dp"
                 android:layout_height="35dp"
                 android:background="@drawable/round_layout"
@@ -112,208 +83,63 @@
                 android:inputType="numberDecimal"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp"
-                app:layout_constraintBottom_toBottomOf="@+id/textViewOhmLawDCSecondItem"
-                app:layout_constraintStart_toStartOf="@+id/editTextOhmLawDCFirstItem"
-                app:layout_constraintTop_toTopOf="@+id/textViewOhmLawDCSecondItem" />
+                app:layout_constraintBottom_toBottomOf="@+id/textViewOhmLawDCResistance"
+                app:layout_constraintStart_toStartOf="@+id/editTextOhmLawDCVoltage"
+                app:layout_constraintTop_toTopOf="@+id/textViewOhmLawDCResistance" />
 
             <Spinner
-                android:id="@+id/spinnerTextOhmLawDCSecondUnit"
+                android:id="@+id/spinnerTextOhmLawDCResistance"
                 android:layout_width="100dp"
                 android:layout_height="35dp"
-                android:background="@drawable/round_layout"
-                app:layout_constraintBottom_toBottomOf="@+id/editTextOhmLawDCSecondItem"
-                app:layout_constraintEnd_toEndOf="@+id/spinnerTextOhmLawDCFirstUnit"
-                app:layout_constraintStart_toStartOf="@+id/spinnerTextOhmLawDCFirstUnit"
-                app:layout_constraintTop_toTopOf="@+id/editTextOhmLawDCSecondItem" />
+                app:layout_constraintBottom_toBottomOf="@+id/editTextOhmLawDCResistance"
+                app:layout_constraintEnd_toEndOf="@+id/spinnerTextOhmLawDCVoltage"
+                app:layout_constraintStart_toStartOf="@+id/spinnerTextOhmLawDCVoltage"
+                app:layout_constraintTop_toTopOf="@+id/editTextOhmLawDCResistance" />
+
+            <Button
+                android:id="@+id/buttonCalculateCurrent1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Calculate"
+                android:fontFamily="@font/lato_bold"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/buttonClear2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewOhmLawDCResistance" />
+
+            <Button
+                android:id="@+id/buttonClear2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:text="Clear"
+                android:textAllCaps="false"
+                android:fontFamily="@font/lato_bold"
+                app:layout_constraintBottom_toBottomOf="@+id/buttonCalculateCurrent1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/buttonCalculateCurrent1"
+                app:layout_constraintTop_toTopOf="@+id/buttonCalculateCurrent1" />
+
+            <TextView
+                android:id="@+id/textViewResult1"
+                style="@style/DETextViewBlue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:text="0"
+                app:layout_constraintBottom_toBottomOf="@+id/textView2"
+                app:layout_constraintStart_toEndOf="@+id/textView2"
+                app:layout_constraintTop_toTopOf="@+id/textView2" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button1OhmLawDC"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/i_v_r"
-            android:background="@color/colorColumbiaBlue"
-            app:layout_constraintEnd_toStartOf="@+id/button2OhmLawDC"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button2OhmLawDC"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="@string/i_p_v"
-            android:background="@color/colorColumbiaBlue"
-            app:layout_constraintBottom_toBottomOf="@+id/button1OhmLawDC"
-            app:layout_constraintEnd_toStartOf="@+id/button3OhmLawDC"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/button1OhmLawDC"
-            app:layout_constraintTop_toTopOf="@+id/button1OhmLawDC" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button3OhmLawDC"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:text="@string/i_p_r"
-            android:background="@color/colorColumbiaBlue"
-            app:layout_constraintBottom_toBottomOf="@+id/button2OhmLawDC"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/button2OhmLawDC"
-            app:layout_constraintTop_toTopOf="@+id/button2OhmLawDC" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button4OhmLawDC"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/v_i_r"
-            android:background="@color/colorColumbiaBlue"
-            app:layout_constraintEnd_toStartOf="@+id/button5OhmLawDC"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button1OhmLawDC" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button5OhmLawDC"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="@string/v_p_i"
-            android:background="@color/colorColumbiaBlue"
-            app:layout_constraintBottom_toBottomOf="@+id/button4OhmLawDC"
-            app:layout_constraintEnd_toStartOf="@+id/button6OhmLawDC"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/button4OhmLawDC"
-            app:layout_constraintTop_toTopOf="@+id/button4OhmLawDC" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button6OhmLawDC"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:text="@string/v_p_r"
-            android:background="@color/colorColumbiaBlue"
-            app:layout_constraintBottom_toBottomOf="@+id/button5OhmLawDC"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/button5OhmLawDC"
-            app:layout_constraintTop_toTopOf="@+id/button5OhmLawDC" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button7OhmLawDC"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/p_i_v"
-            android:background="@color/colorColumbiaBlue"
-            app:layout_constraintEnd_toStartOf="@+id/button8OhmLawDC"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button4OhmLawDC" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button8OhmLawDC"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="@string/p_i_u00b2_r"
-            android:background="@color/colorColumbiaBlue"
-            app:layout_constraintBottom_toBottomOf="@+id/button7OhmLawDC"
-            app:layout_constraintEnd_toStartOf="@+id/button9OhmLawDC"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/button7OhmLawDC"
-            app:layout_constraintTop_toTopOf="@+id/button7OhmLawDC" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button9OhmLawDC"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:text="@string/p_v_u00b2_r"
-            android:background="@color/colorColumbiaBlue"
-            app:layout_constraintBottom_toBottomOf="@+id/button8OhmLawDC"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/button8OhmLawDC"
-            app:layout_constraintTop_toTopOf="@+id/button8OhmLawDC" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button10OhmLawDC"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/r_v_i"
-            android:background="@color/colorColumbiaBlue"
-            app:layout_constraintEnd_toStartOf="@+id/button11OhmLawDC"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button7OhmLawDC" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button11OhmLawDC"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="@string/r_p_i_u00b2"
-            android:background="@color/colorColumbiaBlue"
-            app:layout_constraintBottom_toBottomOf="@+id/button10OhmLawDC"
-            app:layout_constraintEnd_toStartOf="@+id/button12OhmLawDC"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/button10OhmLawDC"
-            app:layout_constraintTop_toTopOf="@+id/button10OhmLawDC" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button12OhmLawDC"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:background="@color/colorColumbiaBlue"
-            android:text="@string/r_v_u00b2_p"
-            app:layout_constraintBottom_toBottomOf="@+id/button11OhmLawDC"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/button11OhmLawDC"
-            app:layout_constraintTop_toTopOf="@+id/button11OhmLawDC"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="64dp"
-            android:layout_marginTop="24dp"
-            android:background="@color/colorNeonYellow"
-            android:text="@string/reset"
-            android:textAllCaps="false"
-            app:layout_constraintEnd_toStartOf="@+id/button14"
-            app:layout_constraintStart_toStartOf="@+id/button11OhmLawDC"
-            app:layout_constraintTop_toBottomOf="@+id/button11OhmLawDC" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:background="@color/colorNeonYellow"
-            android:text="@string/report"
-            android:textAllCaps="false"
-            app:layout_constraintBottom_toBottomOf="@+id/button13"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/button13"
-            app:layout_constraintTop_toTopOf="@+id/button13" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

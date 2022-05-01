@@ -19,4 +19,6 @@
     <color name="colorFallForestGreen">#4E9258</color>
     <color name="colorNeonYellow">#FFFF33</color>
     <color name="colorBakersBrown">#5C3317</color>
+
+    <color name="blackTextColor">#252A38</color>
 </resources>
