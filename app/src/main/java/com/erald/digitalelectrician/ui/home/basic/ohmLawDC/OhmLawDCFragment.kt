@@ -1,20 +1,24 @@
 package com.erald.digitalelectrician.ui.home.basic.ohmLawDC
 
+import android.content.ClipData
+import android.content.ClipboardManager
 import android.content.Context
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.erald.digitalelectrician.CurrentCalculation
 import com.erald.digitalelectrician.MainActivity
 import com.erald.digitalelectrician.R
 import com.erald.digitalelectrician.UnitConverter
 import com.erald.digitalelectrician.databinding.OhmLawDCFragmentBinding
+import com.erald.digitalelectrician.utils.DESnackBar
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -62,15 +66,38 @@ class OhmLawDCFragment : Fragment() {
     private val onClickListener = View.OnClickListener { view ->
         when (view?.id) {
             binding.buttonCalculateCurrent1.id -> {
-                val editTextVoltage = binding.editTextOhmLawDCVoltage.text.toString().toFloatOrNull()
-                val editTextResistance = binding.editTextOhmLawDCResistance.text.toString().toFloatOrNull()
-
-                val valueConverted = UnitConverter.voltageUnitConverter(
-                    editTextVoltage, binding.spinnerTextOhmLawDCVoltage.selectedItem.toString())
-                CurrentCalculation.voltageConverter(valueConverted!!)
-                CurrentCalculation.calculateCurrentFromVoltageAndResistance(valueConverted, editTextResistance!!)
-                binding.textViewResult1.text = CurrentCalculation.current.toString()
+                currentFromVoltageAndResistance()
             }
+
+            binding.buttonClear1.id -> {
+                binding.editTextOhmLawDCVoltage.setText("")
+                binding.editTextOhmLawDCResistance.setText("")
+                binding.textViewResult1.text = "0"
+            }
+        }
+    }
+
+    private fun currentFromVoltageAndResistance() {
+        val editTextVoltage = binding.editTextOhmLawDCVoltage.text.toString().toDoubleOrNull()
+        val editTextResistance = binding.editTextOhmLawDCResistance.text.toString().toDoubleOrNull()
+
+        if (!TextUtils.isEmpty(binding.editTextOhmLawDCVoltage.text)
+            && !TextUtils.isEmpty(binding.editTextOhmLawDCResistance.text)
+        ) {
+            val voltageConverted = UnitConverter.voltageUnitConverter(
+                editTextVoltage, binding.spinnerTextOhmLawDCVoltage.selectedItem.toString()
+            )
+            val resistanceConverted = UnitConverter.resistanceUnitConverter(
+                editTextResistance, binding.spinnerTextOhmLawDCResistance.selectedItem.toString()
+            )
+            CurrentCalculation.calculateCurrentFromVoltageAndResistance(
+                voltageConverted!!,
+                resistanceConverted!!
+            )
+            binding.textViewResult1.text = CurrentCalculation.current.toString() + " A"
+            //copyTextFromClipBoard(binding.textViewResult1)
+        } else {
+            Snackbar.make(binding.root, "Fields cannot be empty", Snackbar.LENGTH_SHORT).show()
         }
     }
 
@@ -96,6 +123,7 @@ class OhmLawDCFragment : Fragment() {
 
     private fun setupListeners() {
         binding.buttonCalculateCurrent1.setOnClickListener(onClickListener)
+        binding.buttonClear1.setOnClickListener(onClickListener)
     }
 
     override fun onDestroyView() {

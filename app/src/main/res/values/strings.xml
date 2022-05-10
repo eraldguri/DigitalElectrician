@@ -53,4 +53,6 @@
     <string name="current">Current</string>
     <string name="voltage">Voltage</string>
     <string name="power">Power</string>
+    <string name="calculate">Calculate</string>
+    <string name="clear">Clear</string>
 </resources>

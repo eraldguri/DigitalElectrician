@@ -4,20 +4,25 @@ class CurrentCalculation {
 
     companion object {
 
-        var current: Float? = null
-        var unitResult: Float? = null
-        var conv: Float? = null
+        var current: Double? = null
+        var unitResult: Double? = null
+        var convertedVoltage: Double? = null
+        var convertedResistance: Double? = null
 
-        fun calculateCurrentFromVoltageAndResistance(voltage: Float, resistance: Float) {
+        fun calculateCurrentFromVoltageAndResistance(voltage: Double, resistance: Double) {
             current = voltage / resistance
         }
 
-        fun calculateCurrentFromPowerAndVoltage(power: Float, voltage: Float) {
+        fun calculateCurrentFromPowerAndVoltage(power: Double, voltage: Double) {
             current = power / voltage
         }
 
-        fun voltageConverter(value: Float) {
-            conv = value
+        fun voltageConverter(value: Double) {
+            convertedVoltage = value
+        }
+
+        fun resistanceConverter(value: Double) {
+            convertedResistance = value
         }
     }
 
